@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Confirmation de paiement{% endblock %}
+
+{% block body %}
+    <h1>Confirmation du paiement</h1>
+    <p>Montant : {{ amount }} EUR</p>
+    <p>Identifiant de checkout : {{ checkoutId }}</p>
+    <form action="{{ path('complete_checkout', {'id': checkoutId}) }}" method="post">
+        <button type="submit">Payer</button>
+    </form>
+{% endblock %}

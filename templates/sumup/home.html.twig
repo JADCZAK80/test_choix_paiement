@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+<h1>Accueil</h1>
+<a href="{{ path('create_checkout') }}" class="btn btn-primary">Payer avec Sumup</a>
+<a href="{{ path('payment_form') }}" class="btn btn-primary">Payer avec Stripe</a>
+{% if app.request.get('status') %}
+    <p>Statut du paiement : <span>{{ app.request.get('status') }}</span></p>
+{% endif %}
+{% endblock %}
